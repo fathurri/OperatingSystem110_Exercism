@@ -17,7 +17,7 @@ Q, Z                               10
 ## Problem
 
 This problem aims to find a solution that can calculate the value of each letter in the word. For example..
-```FATHURRAHMAN````
+```FATHURRAHMAN```
 
 "FATHURRAHMAN" should be scored as worth 14 points:
 + 4 points for F
