@@ -17,9 +17,9 @@ Q, Z                               10
 ## Problem
 
 This problem aims to find a solution that can calculate the value of each letter in the word. For example..
-```FATHURRAHMAN```
+**FATHURRAHMAN**
 
-"FATHURRAHMAN" should be scored as worth 14 points:
+**FATHURRAHMAN** should be scored as worth 14 points:
 + 4 points for F
 + 1 point for A, three times
 + 1 point for T
@@ -35,5 +35,56 @@ And to total:
 + = 13 + 4
 + = 17
 
-## SOLUTION
+# SOLUTION
 
+The way to solve this problem is by adding up each value of each letter contained in the word
+
+## Score
+
+This function is used to define the value of each letter in the scrabble game as described above using HashMap, It is expected that the values of each letter will be made in advance so that the values can be taken. Then reading the characters to be tested, separated by character, then each character is determined to be valued from the HashMap vector, then all the letters are summed in the form of integers.
+
+Here's the full code.
+
+```rust
+/// Compute the Scrabble score for a word.
+
+use std::collections::HashMap;
+
+pub fn score(word: &str) -> u64 {
+//    unimplemented!("Score {} in Scrabble.", word);
+    let scores: HashMap<_, _> = vec![
+        ('a', 1),
+        ('b', 3),
+        ('c', 3),
+        ('d', 2),
+        ('e', 1),
+        ('f', 4),
+        ('g', 2),
+        ('h', 4),
+        ('i', 1),
+        ('j', 8),
+        ('k', 5),
+        ('l', 1),
+        ('m', 3),
+        ('n', 1),
+        ('o', 1),
+        ('p', 3),
+        ('q', 10),
+        ('r', 1),
+        ('s', 1),
+        ('t', 1),
+        ('u', 1),
+        ('v', 4),
+        ('w', 4),
+        ('x', 8),
+        ('y', 4),
+        ('z', 10),
+    ].into_iter()
+        .collect();
+
+    word.to_lowercase()
+        .chars()
+        .filter_map(|c| scores.get(&c))
+        .sum()
+}
+```
