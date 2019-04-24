@@ -1,4 +1,4 @@
-# OperatingSystem110_Exercism
+# Operating System110 Exercism
 ## Scrabble Score Problem
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Scrabble), Scrabble is a word game in which two to four players score points by placing tiles bearing a single letter onto a board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns, and be included in a standard dictionary or lexicon. The values obtained from each letter are as follows...
